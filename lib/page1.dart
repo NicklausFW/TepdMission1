@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Container(
               child: Image.asset(''),
-              color: Colors.green,
+              color: Colors.red,
             ),
             Row(),
             Column(),
