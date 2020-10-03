@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'NicklausFW',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.cyan[500],
-        fontFamily: "",
+        primaryColor: Color(0xFFb83b5e),
+        backgroundColor: Color(0xFFff9966),
+        fontFamily: "Assistant",
       ),
       home: HomeScreen(),
     );
