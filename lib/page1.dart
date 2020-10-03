@@ -104,28 +104,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                height: 300,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    gallery(
-                      image: "assets/images/minecraft1.png",
-                    ),
-                    gallery(
-                      image: "assets/images/minecraft2.png",
-                    ),
-                    gallery(
-                      image: "assets/images/minecraft3.png",
-                    ),
-                    gallery(
-                      image: "assets/images/minecraft4.png",
-                    ),
-                    gallery(
-                      image: "assets/images/minecraft5.png",
-                    ),
-                  ],
-                ),
+              child: Row(
+                children: <Widget>[
+                  gallery(
+                    image: "assets/images/minecraft1.png",
+                  ),
+                  gallery(
+                    image: "assets/images/minecraft2.png",
+                  ),
+                  gallery(
+                    image: "assets/images/minecraft3.png",
+                  ),
+                  gallery(
+                    image: "assets/images/minecraft4.png",
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -212,7 +205,7 @@ class gallery extends StatelessWidget {
               image: AssetImage(
                 image,
               ),
-              width: 100,
+              width: 94,
               height: 200,
               fit: BoxFit.cover,
             ),
