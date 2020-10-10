@@ -19,17 +19,14 @@ class _BookmarkFormState extends State<BookmarkForm> {
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
       ),
       actions: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: FlatButton(
-            child: Text(
-              "OK",
-              style: TextStyle(color: Colors.blue),
-            ),
-            onPressed: () => Navigator.pop(context),
-            color: Colors.transparent,
-            splashColor: Colors.transparent,
+        FlatButton(
+          child: Text(
+            "OK",
+            style: TextStyle(color: Colors.blue),
           ),
+          onPressed: () => Navigator.pop(context),
+          color: Colors.transparent,
+          splashColor: Colors.transparent,
         )
       ],
       shape: RoundedRectangleBorder(
@@ -55,34 +52,33 @@ class _BookmarkFormState extends State<BookmarkForm> {
 
   void sendError() {
     AlertDialog alertDialog = AlertDialog(
+      title: Text(
+        "Booking Failed",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+      ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
+      actions: <Widget>[
+        FlatButton(
+          child: Text(
+            "OK",
+            style: TextStyle(color: Colors.blue),
+          ),
+          color: Colors.transparent,
+          splashColor: Colors.transparent,
+          onPressed: () => Navigator.pop(context),
+        )
+      ],
       content: Container(
-        height: 200,
-        child: Column(
-          children: <Widget>[
-            Text(
-              "Booking Failed",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text("Please fill all form fields"),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: FlatButton(
-                child: Text(
-                  "OK",
-                  style: TextStyle(color: Colors.blue),
-                ),
-                color: Colors.transparent,
-                splashColor: Colors.transparent,
-                onPressed: () => Navigator.pop(context),
-              ),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text("Please fill all form fields"),
+            ],
+          ),
         ),
       ),
     );
@@ -93,7 +89,18 @@ class _BookmarkFormState extends State<BookmarkForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Booking Form'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF3383CD),
+                Color(0xFF11249f),
+              ],
+            ),
+          ),
+        ),
       ),
       body: ListView(
         children: <Widget>[
