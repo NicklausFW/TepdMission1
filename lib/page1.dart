@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
       appBar: AppBar(
         centerTitle: true,
         title: Text('NicklausFW'),
@@ -45,147 +46,178 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(begin: Alignment.topRight, colors: [
-          Color(0xFF3383CD),
-          Color(0xFF00DCB0),
-        ])),
-        child: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 2,
-              child: ClipPath(
-                clipper: Clipper(),
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xFF3383CD),
-                        Color(0xFF11249f),
-                      ],
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/diamondsBG.png"),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(begin: Alignment.topRight, colors: [
+              Color(0xFF3383CD),
+              Color(0xFF00DCB0),
+            ])),
+            child: Column(
+              children: <Widget>[
+                Flexible(
+                  flex: 2,
+                  child: ClipPath(
+                    clipper: Clipper(),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF3383CD),
+                            Color(0xFF11249f),
+                          ],
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/diamondsBG.png"),
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Expanded(
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15, top: 40),
+                                  child: Image(
+                                    image: AssetImage(
+                                        "assets/images/minecraft.png"),
+                                    alignment: Alignment.topCenter,
+                                    width: 260,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 260),
+                                  child: Image(
+                                    image:
+                                        AssetImage("assets/images/steve.png"),
+                                    alignment: Alignment.topCenter,
+                                    width: 1500,
+                                    height: 1500,
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Row(
                     children: <Widget>[
-                      Expanded(
-                        child: Stack(
+                      gallery(
+                        image: "assets/images/minecraft1.png",
+                      ),
+                      gallery(
+                        image: "assets/images/minecraft2.png",
+                      ),
+                      gallery(
+                        image: "assets/images/minecraft3.png",
+                      ),
+                      gallery(
+                        image: "assets/images/minecraft4.png",
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      child: Text(
+                        'THE WORLD IS YOURS FOR THE MAKING',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Flexible(
+                  flex: 4,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: 300,
+                        child: ListView(
+                          scrollDirection: Axis.vertical,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(left: 15, top: 40),
-                              child: Image(
-                                image:
-                                    AssetImage("assets/images/minecraft.png"),
-                                alignment: Alignment.topCenter,
-                                width: 260,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 260),
-                              child: Image(
-                                image: AssetImage("assets/images/steve.png"),
-                                alignment: Alignment.topCenter,
-                                width: 1500,
-                                height: 1500,
-                                fit: BoxFit.fitWidth,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                      'Prepare for an adventure of limitless possibilities as you build, mine, battle mobs, and explore the ever-changing Minecraft landscape.'
+                                      'New tools, locations, and spaces are yours to explore, thanks to our regular updates. Check out the latest.'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                      'If you can dream it, you can build it. Put your imagination and limitless resources to work with Creative Mode.'
+                                      'Get crafty and use the surrounding environment to gather building materials—see how breaking down trees can help you create something new.'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                      'It’s always best to avoid the unpredictable by distancing yourself from wandering mobs—you never know what’ll happen if they get too close!'
+                                      'Discover all the versatile ways dust from the Redstone ore can be used to enhance your creations, bring them to life, or give them some bang.'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                      'Get instant access to over 50 Marketplace items with new additions each month. Share with friends on your own private Realms server.!'
+                                      'Keep your gameplay endlessly inventive and fun with skin packs, texture packs, and more—some of which were built by our very own community members!'),
+                                ],
                               ),
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  gallery(
-                    image: "assets/images/minecraft1.png",
-                  ),
-                  gallery(
-                    image: "assets/images/minecraft2.png",
-                  ),
-                  gallery(
-                    image: "assets/images/minecraft3.png",
-                  ),
-                  gallery(
-                    image: "assets/images/minecraft4.png",
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    'THE WORLD IS YOURS FOR THE MAKING',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Flexible(
-              flex: 4,
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 300,
-                    child: ListView(
-                      scrollDirection: Axis.vertical,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Column(
-                            children: <Widget>[
-                              Text(
-                                  'Prepare for an adventure of limitless possibilities as you build, mine, battle mobs, and explore the ever-changing Minecraft landscape.'
-                                  'New tools, locations, and spaces are yours to explore, thanks to our regular updates. Check out the latest.'),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                  'If you can dream it, you can build it. Put your imagination and limitless resources to work with Creative Mode.'
-                                  'Get crafty and use the surrounding environment to gather building materials—see how breaking down trees can help you create something new.'),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                  'It’s always best to avoid the unpredictable by distancing yourself from wandering mobs—you never know what’ll happen if they get too close!'
-                                  'Discover all the versatile ways dust from the Redstone ore can be used to enhance your creations, bring them to life, or give them some bang.'),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                  'Get instant access to over 50 Marketplace items with new additions each month. Share with friends on your own private Realms server.!'
-                                  'Keep your gameplay endlessly inventive and fun with skin packs, texture packs, and more—some of which were built by our very own community members!'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+          ),
+          Align(
+            alignment: Alignment(0.9, 0.9),
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/first');
+              },
+              textColor: Colors.white,
+              color: Colors.transparent,
+              padding: EdgeInsets.all(0),
+              shape: StadiumBorder(),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(colors: [
+                    Color(0xFF3383CD),
+                    Color(0xFF11249f),
+                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                ),
+                padding: const EdgeInsets.fromLTRB(24, 12, 24, 12),
+                child: const Text(
+                  'Book Now',
+                  style: TextStyle(fontSize: 15),
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

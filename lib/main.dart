@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tepdmission1/page1.dart';
+import 'package:tepdmission1/page2.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color(0xFFff9966),
         fontFamily: "Assistant",
       ),
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/first': (context) => BookmarkForm()
+      },
     );
   }
 }
